@@ -103,17 +103,17 @@ fun EntryListPreview(){
 fun EntryList(){
     val context = LocalContext.current
     var entries = remember { mutableStateListOf<Entry>() }
-//    getEntries(entries, context)
-//
-    val testEntry = listOf<Entry>(
-        Entry(id = "276", listId = 1, name = "Item 276"),
-        Entry(id = "808", listId = 1, name = "Item 808"),
-        Entry(id = "648", listId = 4, name = "Item 684")
-    )
+    getEntries(entries, context)
+
+//    val testEntry = listOf<Entry>(
+//        Entry(id = "276", listId = 1, name = "Item 276"),
+//        Entry(id = "808", listId = 1, name = "Item 808"),
+//        Entry(id = "648", listId = 4, name = "Item 684")
+//    )
     LazyColumn(){
-        items(testEntry) {entry ->
+        items(entries) {entry ->
             Row(modifier = Modifier.padding(
-                horizontal= 24.dp,
+                horizontal= 16.dp,
                 vertical = 12.dp
             )
                 .fillMaxWidth(),
